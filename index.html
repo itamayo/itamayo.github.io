@@ -1,1 +1,42 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.17/webcomponents.js"></script>
+  <link rel="import" href="../resources/wcs/bower_components/polymer/polymer.html">
+  <link rel="import" href="../js/mediascape/AdaptationToolkit/componentManager/component-query.html">
+  <link rel="import" href="../js/mediascape/AdaptationToolkit/componentManager/componentStatus.html">
+  <link rel="import" href="../resources/wcs/audio-video-sm/video-audio.html">
+  <script src="resources/libs/underscore-min.js"></script>
+  <script>
+ setTimeout(
+   function(){
+          var cmps = document.body.children;
+          cmps = _.toArray(cmps);
+          var cmps = cmps.filter(
+            function(c){
+             if (c.nodeName.split('-').length>=2) return true;
+             else return false;
+           }
+          );
+          var componentsContainer = document.createElement('div');
+          componentsContainer.id = "componentsContainer";
+          document.body.appendChild(componentsContainer);
+          cmps.forEach(function(c){
+              componentsContainer.appendChild(c);
+          });
+
+          console.log(wComp.updateNodes());
+        },1000);
+  </script>
+</head>
+<body>
+
+
+  <x-media file=""></x-media>
+  <x-media file=""></x-media>
+  <x-media file=""></x-media>
+</body>
+</html>
+
