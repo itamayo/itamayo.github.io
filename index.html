@@ -10,6 +10,12 @@
   <link rel="import" href="../resources/wcs/audio-video-sm/video-audio.html">
   <script src="resources/libs/underscore-min.js"></script>
   <script>
+document.addEventListener("error",function(e){
+	var log = document.createElement('div');
+	div.style.color= "red";
+	div.innerHTML ="e";	
+	document.body.appedChild(log);
+});
  setTimeout(
    function(){
           var cmps = document.body.children;
@@ -30,6 +36,7 @@
 
         },1000);
   </script>
+
 </head>
 <body>
 
